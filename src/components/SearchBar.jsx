@@ -13,7 +13,7 @@ const SearchBar = ({ onSearch }) => {
         type="text"
         placeholder="Cari film..."
         onChange={handleChange}
-        className="w-full px-4 py-3 pl-10 rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm text-gray-900 dark:text-white"
+        className="w-full px-4 py-3 pl-10 rounded-xl bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm text-white"
       />
       <svg
         className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"

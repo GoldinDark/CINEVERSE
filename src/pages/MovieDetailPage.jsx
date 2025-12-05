@@ -61,20 +61,27 @@ const MovieDetailPage = () => {
   const topCast = credits.cast?.slice(0, 5) || [];
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      {/* Tombol Kembali */}
-      <button
-        onClick={() => navigate(-1)}
-        className="mb-6 flex items-center gap-2 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200 font-medium"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-        </svg>
-        Kembali ke Halaman Sebelumnya
-      </button>
+    <div className="container mx-auto px-4 py-8 max-w-6xl pt-20"> {/* ⬅️ pt-20 untuk menghindari tabrakan dengan navbar fixed */}
+      {/* Tombol Kembali - Dengan Desain Modern */}
+      <div className="mb-6">
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200 group"
+        >
+          <svg
+            className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span>Kembali ke Halaman Sebelumnya</span>
+        </button>
+      </div>
 
       {/* Detail Film */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-8">
+      <div className="bg-gray-800 rounded-xl shadow-lg p-6 mb-8">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/3">
             <img
@@ -91,7 +98,7 @@ const MovieDetailPage = () => {
               {[...Array(5)].map((_, i) => (
                 <svg
                   key={i}
-                  className={`w-6 h-6 ${i < stars ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'}`}
+                  className={`w-6 h-6 ${i < stars ? 'text-yellow-400' : 'text-gray-300'}`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -101,7 +108,7 @@ const MovieDetailPage = () => {
               <span className="ml-2 text-lg font-semibold">({rating}/10)</span>
             </div>
 
-            <p className="text-gray-700 dark:text-gray-300 mb-4">{movie.overview}</p>
+            <p className="text-gray-300 mb-4">{movie.overview}</p>
 
             {/* Cast Section */}
             <div className="mt-6">
@@ -115,7 +122,7 @@ const MovieDetailPage = () => {
                   {topCast.map(actor => (
                     <div
                       key={actor.id}
-                      className="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition"
+                      className="flex flex-col items-center p-3 bg-gray-700 rounded-lg hover:bg-gray-600 transition"
                     >
                       {actor.profile_path ? (
                         <img
@@ -124,23 +131,23 @@ const MovieDetailPage = () => {
                           className="w-16 h-16 rounded-full object-cover mb-2"
                         />
                       ) : (
-                        <div className="w-16 h-16 bg-gray-300 dark:bg-gray-500 rounded-full flex items-center justify-center mb-2">
-                          <svg className="w-8 h-8 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                        <div className="w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center mb-2">
+                          <svg className="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c1.52 0 5.1 1.34 5.1 5H6.9c0-3.66 3.58-5 5.1-5z"/>
                           </svg>
                         </div>
                       )}
-                      <p className="text-sm font-medium text-center text-gray-800 dark:text-white truncate max-w-[80px]">
+                      <p className="text-sm font-medium text-center text-white truncate max-w-[80px]">
                         {actor.name}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-300 text-center truncate max-w-[80px]">
+                      <p className="text-xs text-gray-400 text-center truncate max-w-[80px]">
                         {actor.character}
                       </p>
                     </div>
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 dark:text-gray-400 italic">Tidak ada data cast yang tersedia.</p>
+                <p className="text-gray-400 italic">Tidak ada data cast yang tersedia.</p>
               )}
             </div>
           </div>
@@ -149,7 +156,7 @@ const MovieDetailPage = () => {
 
       {/* Rekomendasi Film Serupa */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Rekomendasi Film Serupa</h2>
+        <h2 className="text-2xl font-bold mb-4 text-white">Rekomendasi Film Serupa</h2>
 
         {loadingRecs ? (
           <div className="flex justify-center py-10">
@@ -168,7 +175,7 @@ const MovieDetailPage = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-10 text-gray-500 dark:text-gray-400">
+          <div className="text-center py-10 text-gray-400">
             Belum ada rekomendasi film serupa untuk saat ini.
           </div>
         )}

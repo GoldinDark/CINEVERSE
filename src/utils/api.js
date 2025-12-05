@@ -19,12 +19,9 @@ export const fetchMovieDetails = async (id) => {
 export const fetchMovieRecommendations = async (movieId) => {
   try {
     const response = await fetch(`${BASE_URL}/movie/${movieId}/recommendations?api_key=${API_KEY}`);
-    if (!response.ok) {
-      console.warn(`Rekomendasi untuk film ${movieId} tidak ditemukan.`);
-      return { results: [] }; // Return array kosong jika error
-    }
+    if (!response.ok) throw new Error('Gagal mengambil rekomendasi film');
     const data = await response.json();
-    return data; // Ini berisi { page, results, total_pages, ... }
+    return data;
   } catch (error) {
     console.error("Error fetching recommendations:", error);
     return { results: [] };

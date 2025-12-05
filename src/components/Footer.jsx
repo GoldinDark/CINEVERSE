@@ -4,37 +4,30 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="py-8 px-6 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 text-gray-300 relative overflow-hidden">
-      {/* Efek partikel halus (optional, tetap ringan) */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(75,85,99,0.2)_0%,transparent_50%)]"></div>
-        <div className="w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(147,188,255,0.1)_0%,transparent_50%)]"></div>
-      </div>
-
+    <footer className="py-6 px-4 bg-gray-900 border-t border-gray-800 text-gray-300 relative overflow-hidden">
       {/* Konten utama */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
         
         {/* Left: Copyright & Logo */}
         <div className="text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
-            <span className="text-2xl font-bold text-yellow-400">Cineverse</span>
+            <span className="text-xl font-bold text-yellow-400">Cineverse</span>
             <span className="text-xs bg-gray-800 px-2 py-1 rounded-full text-gray-400">v1.0</span>
           </div>
-          <p className="text-sm font-light">
+          <p className="text-xs font-light">
             © {new Date().getFullYear()} Cineverse. All rights reserved.
           </p>
         </div>
 
         {/* Center: Navigasi Footer */}
-        <div className="flex flex-wrap justify-center gap-6 text-sm font-light">
+        <div className="flex flex-wrap justify-center gap-4 text-xs font-light">
           <a href="/" className="hover:text-yellow-400 transition duration-200 hover:underline">Home</a>
           <a href="/about" className="hover:text-yellow-400 transition duration-200 hover:underline">About Us</a>
-          <a href="https://letterboxd.com/" className="hover:text-yellow-400 transition duration-200 hover:underline">Want to review a movie ??</a>
           <a href="#" className="hover:text-yellow-400 transition duration-200 hover:underline">Contact</a>
         </div>
 
         {/* Right: Social Icons */}
-        <div className="flex space-x-4 justify-center md:justify-end">
+        <div className="flex space-x-3 justify-center md:justify-end">
           <a
             href="#"
             className="text-gray-400 hover:text-yellow-400 transition duration-200"
@@ -59,14 +52,11 @@ const Footer = () => {
             aria-label="YouTube"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.498 6.186a3.026 3.026 0 0 0-.974-2.173C21.952 3.194 20.49 2.5 18.93 2.5c-1.45 0-2.912.69-3.974 2.186-1.062 1.496-1.618 3.638-1.618 5.88 0 2.242.556 4.384 1.618 5.88 1.062 1.496 2.524 2.186 3.974 2.186 1.46 0 2.922-.69 3.974-2.186 1.062-1.496 1.618-3.638 1.618-5.88 0-2.242-.556-4.384-1.618-5.88zm-11.684 9.696v-6.468l5.568 3.234-5.568 3.234z"/>
+              <path d="M23.498 6.186a3.026 3.026 0 00-.974-2.173C21.952 3.194 20.49 2.5 18.93 2.5c-1.45 0-2.912.69-3.974 2.186-1.062 1.496-1.618 3.638-1.618 5.88 0 2.242.556 4.384 1.618 5.88 1.062 1.496 2.524 2.186 3.974 2.186 1.46 0 2.922-.69 3.974-2.186 1.062-1.496 1.618-3.638 1.618-5.88 0-2.242-.556-4.384-1.618-5.88zm-11.684 9.696v-6.468l5.568 3.234-5.568 3.234z"/>
             </svg>
           </a>
         </div>
       </div>
-
-      {/* Garis dekoratif di atas footer (seperti di navbar) */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30"></div>
     </footer>
   );
 };

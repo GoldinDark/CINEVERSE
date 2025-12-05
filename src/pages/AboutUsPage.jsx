@@ -12,11 +12,11 @@ const AboutUsPage = () => {
     { label: "Film Dokumenter", value: "33%", description: "Tren meningkat sejak 2023." }
   ];
 
-  // Profil Customisasi
+  // Profil Founder
   const profile = {
-    name: "Raihan Corleone",
-    role: "Mahasiswa",
-    bio: "Pencinta film sejak kecil, just a man who love movies. Mengembangkan Cineverse karena ingin membantu orang menemukan film terbaik tanpa ribet.",
+    name: "Corleone",
+    role: "Founder & CEO",
+    bio: "Pencinta film sejak kecil, lulusan Film Studies di UI. Mengembangkan Cineverse karena ingin membantu orang menemukan film terbaik tanpa ribet.",
     image: "https://placehold.co/200x200/1e293b/ffffff?text=AW&font=montserrat"
   };
 
@@ -28,24 +28,30 @@ const AboutUsPage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://variety.com/wp-content/uploads/2023/03/Movie-Theater-Film-Cinema-Exhibition-Placeholder.jpg?w=1000&h=562&crop=1')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`,
           }}
         ></div>
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Partikel Efek Halus */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(75,85,99,0.2)_0%,transparent_50%)]"></div>
+          <div className="w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(147,188,255,0.1)_0%,transparent_50%)]"></div>
+        </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center py-12">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-blue-400 bg-clip-text text-transparent mb-4">
+        <div className="relative z-10 text-center py-12 px-4">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-blue-400 bg-clip-text text-transparent mb-4 drop-shadow-lg animate-fadeIn">
             Tentang Kami
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed animate-fadeIn" style={{ animationDelay: '0.2s' }}>
             Cineverse lahir dari cinta terhadap sinema dan keinginan untuk membantu penonton menemukan film terbaik sesuai mood mereka.
           </p>
         </div>
       </div>
 
-      {/* Statistik Film Berdasarkan Genre */}
+      {/* Statistik Penonton Film */}
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-12">
         <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white text-center">Statistik Penonton Film</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
