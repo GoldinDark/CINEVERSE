@@ -6,6 +6,7 @@ import MovieDetailPage from './pages/MovieDetailPage';
 import AboutUsPage from './pages/AboutUsPage'; // Buat komponen ini
 import FavoritesPage from './pages/FavoritesPage'; // Buat komponen ini
 import Footer from './components/Footer'; // Buat komponen ini
+import ErrorDisplay from './components/ErrorDisplay';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/movie/:id" element={<MovieDetailPage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="*" element={<ErrorDisplay message="Halaman tidak ditemukan." />} />
           </Routes>
         </main>
         <Footer />

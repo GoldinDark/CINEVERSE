@@ -38,7 +38,7 @@ const ErrorDisplay = ({ message }) => {
           </p>
           <button
             onClick={() => navigate('/')}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium animate-fadeIn"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 font-medium animate-fadeIn hover:scale-105 shadow-lg hover:shadow-xl transform"
             style={{ animationDelay: '0.6s' }}
           >
             Kembali ke Beranda
